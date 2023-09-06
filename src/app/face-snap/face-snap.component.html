@@ -1,9 +1,14 @@
 <div class="face-snap-card">
   <!-- String Interpolation -->
-  <h1>Name : {{ title }}</h1>
-  <p>{{ description }}</p>
-  <p>Mise en ligne le : {{ createdDate }}</p>
-  <p>{{ snaps }}</p>
+  <h1>Name : {{ faceSnap.title }}</h1>
+  <p>{{ faceSnap.description }}</p>
+  <p>Mise en ligne le : {{ faceSnap.createdDate }}</p>
+  <p>
+    <button (click)="onAddSnaps()">
+      {{ isSnap ? "Oops, un Snap!" : "Oh snaps !!!" }}
+    </button>
+    {{ faceSnap.snaps }}
+  </p>
   <!--Attribute binding-->
-  <img [src]="image" [alt]="title" />
+  <img [src]="faceSnap.image" [alt]="faceSnap.title" />
 </div>
