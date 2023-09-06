@@ -1,0 +1,9 @@
+<div class="face-snap-card">
+  <!-- String Interpolation -->
+  <h1>Name : {{ title }}</h1>
+  <p>{{ description }}</p>
+  <p>Mise en ligne le : {{ createdDate }}</p>
+  <p>{{ snaps }}</p>
+  <!--Attribute binding-->
+  <img [src]="image" [alt]="title" />
+</div>
