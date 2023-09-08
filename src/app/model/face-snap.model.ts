@@ -5,6 +5,7 @@ export class FaceSnap {
     createdDate: Date;
     snaps: number;
     image: string;
+    location?: String
 
     constructor(
       title: string,
@@ -21,11 +22,20 @@ export class FaceSnap {
   //   }*/
 
   //autre façon d'implémenter notre constructeur
-  constructor(
+  /*constructor(
     public title: string,
     public description: string,
     public createdDate: Date,
     public snaps: number,
-    public image: string
-  ) {}
+    public image: string,
+    public location?: String
+  ) {}*/
+
+  //Autre déclaration sans utilisé un constructeur
+  title!: string;
+  description!: string;
+  createdDate!: Date;
+  snaps!: number;
+  image!: string;
+  location?: String; //propriété optionnelle
 }
