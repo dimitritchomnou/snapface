@@ -11,4 +11,8 @@
   </p>
   <!--Attribute binding-->
   <img [src]="faceSnap.image" [alt]="faceSnap.title" />
+  <!-- Ajouter où masquer un élément du DOM -->
+  <p class="location" *ngIf="faceSnap.location">
+    Ville de résidence : <span>{{ faceSnap.location }}</span>
+  </p>
 </div>

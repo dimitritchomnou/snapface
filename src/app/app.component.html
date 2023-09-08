@@ -1,3 +1,6 @@
-<app-face-snap [faceSnap]="mySnap"></app-face-snap>
+<app-face-snap
+  *ngFor="let faceSnap of faceSnapList"
+  [faceSnap]="faceSnap"
+></app-face-snap>
 
-<app-face-snap [faceSnap]="mySnapTwo"></app-face-snap>
+<!-- <app-face-snap [faceSnap]="mySnapTwo" *ngIf="mySnapTwo.snaps >= 0"></app-face-snap> -->
