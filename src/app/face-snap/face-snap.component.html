@@ -1,4 +1,4 @@
-<div class="face-snap-card">
+<div class="face-snap-card" [ngClass]="{ snapped: isSnap }">
   <!-- String Interpolation -->
   <h1>Name : {{ faceSnap.title }}</h1>
   <p>{{ faceSnap.description }}</p>
@@ -7,12 +7,14 @@
     <button (click)="onAddSnaps()">
       {{ isSnap ? "Oops, un Snap!" : "Oh snaps !!!" }}
     </button>
-    {{ faceSnap.snaps }}
+    <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">{{
+      faceSnap.snaps
+    }}</span>
   </p>
   <!--Attribute binding-->
   <img [src]="faceSnap.image" [alt]="faceSnap.title" />
   <!-- Ajouter où masquer un élément du DOM -->
-  <p class="location" *ngIf="faceSnap.location">
+  <p class="location" *ngIf="faceSnap.location === villeName">
     Ville de résidence : <span>{{ faceSnap.location }}</span>
   </p>
 </div>

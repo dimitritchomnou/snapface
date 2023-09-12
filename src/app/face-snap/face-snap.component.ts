@@ -10,9 +10,11 @@ export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
 
   isSnap!: boolean;
+  villeName!: String;
 
   ngOnInit(): void {
     this.isSnap = false;
+    this.villeName = 'Paris';
   }
 
   onAddSnaps() {
