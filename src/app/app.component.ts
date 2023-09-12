@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
         title: 'Yaya Philiph',
         description: 'My best friend for all time',
         createdDate: new Date(),
-        snaps: 6,
+        snaps: 206,
         image: 'https://ginou.ci/wp-content/uploads/2023/07/Vuejs.jpg',
       },
       {
