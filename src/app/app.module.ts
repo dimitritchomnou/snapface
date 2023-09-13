@@ -6,9 +6,11 @@ import * as fr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
+import { HearderComponent } from './hearder/hearder.component';
 
 @NgModule({
-  declarations: [AppComponent, FaceSnapComponent],
+  declarations: [AppComponent, FaceSnapComponent, FaceSnapListComponent, HearderComponent],
   imports: [BrowserModule],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }], //Add french language config
   bootstrap: [AppComponent],
