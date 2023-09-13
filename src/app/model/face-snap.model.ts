@@ -32,6 +32,7 @@ export class FaceSnap {
   ) {}*/
 
   //Autre déclaration sans utilisé un constructeur
+  id!: number;
   title!: string;
   description!: string;
   createdDate!: Date;
