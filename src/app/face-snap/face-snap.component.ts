@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'; //Ajout Input
 import { FaceSnap } from '../model/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-face-snap',
@@ -14,7 +15,11 @@ export class FaceSnapComponent implements OnInit {
   villeName!: String;
 
   //Injection du service
-  constructor(private faceSnapService: FaceSnapsService) {}
+  constructor(
+    private faceSnapService: FaceSnapsService,
+    private routeActive: ActivatedRoute,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
     this.isSnap = false;
@@ -23,13 +28,17 @@ export class FaceSnapComponent implements OnInit {
 
   onAddSnaps() {
     if (this.isSnap === false) {
-      this.faceSnapService.AddSnapFace(this.faceSnap.id, 'snap');
+      this.faceSnapService.addSnapFace(this.faceSnap.id, 'snap');
       console.log('Oh snaps ==> ' + this.isSnap);
       this.isSnap = true;
     } else {
-      this.faceSnapService.AddSnapFace(this.faceSnap.id, 'unsnap');
+      this.faceSnapService.addSnapFace(this.faceSnap.id, 'unsnap');
       console.log('Oops, un Snap ==> ' + this.isSnap);
       this.isSnap = false;
     }
+  }
+
+  snapFaceView() {
+    this.route.navigateByUrl(`facesnap/${this.faceSnap.id}`);
   }
 }

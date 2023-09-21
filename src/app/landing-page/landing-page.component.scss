@@ -1,0 +1,40 @@
+.landing-block img {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.landing-links {
+  width: 100%;
+  text-align: center;
+}
+a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.active {
+  color: #666;
+  text-decoration: underline;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: lightgray 3px 3px 7px;
+  margin-right: 20px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: lightgray 0 0 5px;
+  }
+}
