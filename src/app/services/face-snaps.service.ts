@@ -39,7 +39,16 @@ export class FaceSnapsService {
     return this.faceSnaps;
   }
 
-  AddSnapFace(faceSnapId: number, isSnap: 'snap' | 'unsnap'): void {
+  getFaceSnapById(faceSnapId: number): FaceSnap {
+    const faceSnap = this.faceSnaps.find((item) => item.id === faceSnapId);
+    if (faceSnap) {
+      return faceSnap;
+    } else {
+      throw new Error('FaceSnap not found');
+    }
+  }
+
+  addSnapFace(faceSnapId: number, isSnap: 'snap' | 'unsnap'): void {
     try {
       const faceSnap = this.faceSnaps.find((item) => item.id === faceSnapId);
       if (faceSnap) {

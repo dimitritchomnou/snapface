@@ -1,0 +1,39 @@
+<div class="face-snap-card" [ngClass]="{ snapped: isSnap }">
+  <!-- String Interpolation -->
+  <h1>{{ faceSnap.title | uppercase }}</h1>
+  <!-- <h1>{{ faceSnap.title | lowercase }}</h1>
+    <h1>{{ faceSnap.title | titlecase }}</h1> -->
+  <p>{{ faceSnap.description }}</p>
+  <p>
+    Mise en ligne : {{ faceSnap.createdDate | date : "le dd/MM/yy à HH:mm" }}
+    <!-- Mise en ligne : {{ faceSnap.createdDate | date : "à  HH:mm, le d MM yyyy" }} -->
+    <!-- Mise en ligne : {{ faceSnap.createdDate | date : "longDate" }} -->
+  </p>
+  <p>
+    <button (click)="onAddSnaps()">
+      {{ isSnap ? "Oops, un Snap!" : "Oh snaps !!!" }}
+    </button>
+    <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">{{
+      faceSnap.snaps
+    }}</span>
+  </p>
+  <!--Attribute binding-->
+  <img [src]="faceSnap.image" [alt]="faceSnap.title" />
+  <!-- Ajouter où masquer un élément du DOM -->
+  <p class="location" *ngIf="faceSnap.location === villeName">
+    Ville de résidence : <span>{{ faceSnap.location }}</span>
+  </p>
+
+  <!-- DecimalPipe -->
+  <p>DecimalPipe : {{ 4346234.36 | number : "2.0-1" }}</p>
+  <!-- PercentPipe -->
+  <p>PercentPipe : {{ 0.336568 | percent : "2.0-3" }}</p>
+  <!-- currencyPipe pour les montant d'argent avec le symbole -->
+  <p>
+    currencyPipe :
+    <span>==> symbole monaie : {{ 344.36 | currency : "EUR" }}</span>
+    <!-- currencyPipe pour les montant d'argent avec le code de la mainaie -->
+    <span> ==> code Monaie : {{ 344.36 | currency : "EUR" : "code" }}</span>
+  </p>
+  <a routerLink="/listfacesnaps">Go back to snapface list</a>
+</div>
